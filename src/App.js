@@ -20,44 +20,7 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-const events = [
-  {
-    title: 'Aniversario Pai',
-    allDay: true,
-    start: new Date(2021, 8, 0),
-    end: new Date(2021, 8, 0),
-  },
-  {
-    title: 'Festa Junina',
-
-    start: new Date(2021, 8, 0),
-    end: new Date(2021, 8, 0),
-  },
-  {
-    title: 'Natal',
-
-    start: new Date(2021, 8, 0),
-    end: new Date(2021, 8, 0),
-  },
-  {
-    title: 'Vacation',
-
-    start: new Date(2021, 8, 2),
-    end: new Date(2021, 8, 10),
-  },
-  {
-    title: 'Shopping Mall',
-
-    start: new Date(2021, 8, 14),
-    end: new Date(2021, 8, 14),
-  },
-  {
-    title: 'Go to the Party',
-
-    start: new Date(2021, 8, 0),
-    end: new Date(2021, 8, 0),
-  },
-];
+const events = [{}];
 
 function App() {
   const [newEvent, setNewEvent] = useState({ title: '', start: '', end: '' });
@@ -80,21 +43,24 @@ function App() {
           onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
         />
         <DatePicker
-          placeholderText="Start Date"
+          placeholderText="O Evento se Inicia em"
           style={{ marginRight: '10px' }}
           selected={newEvent.start}
           onChange={(start) => setNewEvent({ ...newEvent, start })}
         />
 
         <DatePicker
-          placeholderText="End Date"
+          placeholderText="O Evento  Termina em"
           selected={newEvent.end}
           onChange={(end) => setNewEvent({ ...newEvent, end })}
         />
+        <button style={{ marginTop: '10px' }} onClick={handleAddEvnt}>
+          Adicionar Evento
+        </button>
       </div>
       <Calendar
         localizer={localizer}
-        events={events}
+        events={allEvent}
         startAccessor="start"
         endAccessor="end"
         style={{ height: 500, margin: '50px' }}
