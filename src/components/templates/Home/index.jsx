@@ -5,9 +5,10 @@ import startOfWeek from 'date-fns/startOfWeek';
 import React, { useState } from 'react';
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import DatePicker from 'react-datepicker';
+
 import Favicon from 'react-favicon';
 
+import Input from '../../Input';
 import 'react-datepicker/dist/react-datepicker.css';
 import './App.css';
 
@@ -22,7 +23,10 @@ const localizer = dateFnsLocalizer({
   getDay,
   locales,
 });
-
+const titleName = {
+  title: 'CalendarioDay - Mantenha-se em dia com sua vida!',
+  titleH1: 'CalendarioDay',
+};
 const events = [{}];
 
 function App() {
@@ -36,7 +40,7 @@ function App() {
   };
   //utilizamos para dar titulo a pagina
   React.useEffect(() => {
-    document.title = 'CalendarioDay - Mantenha-se em dia com sua vida!';
+    document.title = titleName.title;
   }, []);
 
   return (
@@ -45,34 +49,10 @@ function App() {
         url="https://images.vexels.com/media/users/3/205950/isolated/preview/6fbc93ab8efc8497ef9ad1f7c815dd33-icone-de-curso-do-calendario.png"
         title="Calendario"
       />
-      <h1>Calendar</h1>
+      <h1>{titleName.titleH1}</h1>
       <h2> Adicionar Evento </h2>
-      <div>
-        {/* Input para adicionar os dados, e funcao onChange para adicionar os mesmos*/}
-        <input
-          type="text"
-          placeholder="Adicionar Titulo"
-          style={{ width: '20%', margin: '10px' }}
-          value={newEvent.title}
-          onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-        />
-
-        <DatePicker
-          placeholderText="O Evento se Inicia em"
-          style={{ marginRight: '10px' }}
-          selected={newEvent.start}
-          onChange={(start) => setNewEvent({ ...newEvent, start })}
-        />
-
-        <DatePicker
-          placeholderText="O Evento  Termina em"
-          selected={newEvent.end}
-          onChange={(end) => setNewEvent({ ...newEvent, end })}
-        />
-        <button style={{ marginTop: '10px' }} onClick={handleAddEvnt}>
-          Adicionar Evento
-        </button>
-      </div>
+      {/**/}
+      <Input newEvent={newEvent} setNewEvent={setNewEvent} handleAddEvnt={handleAddEvnt} />
       {/*adicionando evento do calendario*/}
       <Calendar
         localizer={localizer}
