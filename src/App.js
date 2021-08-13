@@ -11,7 +11,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./App.css";
 
 const locales = {
-  "pt-BR": require("date-fns/locale/pt-BR"),
+  "en-US": require("date-fns/locale/en-US"),
   
 }
 const localizer = dateFnsLocalizer({
@@ -19,7 +19,7 @@ const localizer = dateFnsLocalizer({
   parse,
   startOfWeek,
   getDay,
-  locales,
+ locales
 })
 
 const events = [
@@ -45,7 +45,7 @@ const events = [
 function App() {
   return (
     <div className="App">
-      
+      <Calendar localizer={localizer} events={events} startAccessor="start"  endAccessor="end" style={{height: 500, margin: "50px"}} />
     </div>
   );
 }
