@@ -5,6 +5,7 @@ import startOfWeek from 'date-fns/startOfWeek';
 import React, { useState } from 'react';
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import Cookies from 'universal-cookie';
 
 import Favicon from 'react-favicon';
 
@@ -12,10 +13,27 @@ import Input from '../../Input';
 import 'react-datepicker/dist/react-datepicker.css';
 import './App.css';
 
+//setando Cookies (Treino)
+const valuesOfCookies = [
+  {
+    name: 'Chave1',
+    value: 'value1',
+  },
+  {
+    name: 'Chave2',
+    value: 'value2',
+  },
+];
+//coookies
+const cookies = new Cookies();
+cookies.set(valuesOfCookies[0].name, valuesOfCookies[0].value, { secure: true, sameSite: 'none' });
+cookies.set(valuesOfCookies[1].name, valuesOfCookies[1].value, { secure: true, sameSite: 'none' });
+
 //localidade do pais ou idioma
 const locales = {
   'en-US': require('date-fns/locale/en-US'),
 };
+
 const localizer = dateFnsLocalizer({
   format,
   parse,

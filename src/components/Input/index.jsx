@@ -34,8 +34,8 @@ export const Input = ({ newEvent, setNewEvent, handleAddEvnt }) => {
 };
 
 Input.propTypes = {
-  newEvent: P.string.isRequired,
-  setNewEvent: P.string.isRequired,
+  newEvent: P.object.isRequired,
+  setNewEvent: P.func.isRequired,
   handleAddEvnt: P.func.isRequired,
 };
 export default Input;
