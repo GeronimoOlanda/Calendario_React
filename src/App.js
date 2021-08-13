@@ -24,24 +24,26 @@ const localizer = dateFnsLocalizer({
 
 const events = [
   {
-    title: "Aniversario do Pain",
+    title: "Aniversario Pai",
     allDay: true,
-    start: new Date(2021,2,10),
-    end: new Date(2021, 2, 10)
+    start: new Date(2021, 8, 0),
+    end: new Date(2021, 8, 0)
   },
   {
-    title: "Aniversario meu",
-    allDay: true,
-    start: new Date(2021,10,10),
-    end: new Date(2021, 10, 10)
+    title: "Festa Junina",
+
+    start: new Date(2021, 8, 0),
+    end: new Date(2021, 8, 0)
   },
   {
-    title: "Dia de Luta Livre",
-    allDay: true,
-    start: new Date(2021,5,10),
-    end: new Date(2021, 5, 10)
+    title: "Natal",
+
+    start: new Date(2021, 8, 0),
+    end: new Date(2021, 8, 0)
   }
+
 ]
+
 function App() {
   return (
     <div className="App">
