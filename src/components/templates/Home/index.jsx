@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <h1>Calendar</h1>
-      <h2> Add New Event </h2>
+      <h2> Adicionar Evento </h2>
       <div>
         <input
           type="text"
