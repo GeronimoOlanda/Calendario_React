@@ -43,7 +43,7 @@ const localizer = dateFnsLocalizer({
 });
 const titleName = {
   title: 'CalendarioDay - Mantenha-se em dia com sua vida!',
-  titleH1: 'CalendarioDay',
+  subtitle: 'CalendarioDay',
 };
 const events = [{}];
 
@@ -56,6 +56,7 @@ function App() {
   const handleAddEvnt = () => {
     setAllEvent([...allEvent, newEvent]);
   };
+
   //utilizamos para dar titulo a pagina
   React.useEffect(() => {
     document.title = titleName.title;
@@ -67,7 +68,7 @@ function App() {
         url="https://images.vexels.com/media/users/3/205950/isolated/preview/6fbc93ab8efc8497ef9ad1f7c815dd33-icone-de-curso-do-calendario.png"
         title="Calendario"
       />
-      <h1>{titleName.titleH1}</h1>
+      <h1>{titleName.subtitle}</h1>
       <h2> Adicionar Evento </h2>
       {/**/}
       <Input newEvent={newEvent} setNewEvent={setNewEvent} handleAddEvnt={handleAddEvnt} />
