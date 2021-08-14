@@ -69,7 +69,6 @@ function App() {
         title="Calendario"
       />
       <h1>{titleName.subtitle}</h1>
-      <h2> Adicionar Evento </h2>
       {/**/}
       <Input newEvent={newEvent} setNewEvent={setNewEvent} handleAddEvnt={handleAddEvnt} />
       {/*adicionando evento do calendario*/}
