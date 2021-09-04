@@ -20,8 +20,11 @@ button{
   border-radius: 5px;
 
   cursor: pointer;
+  transition: 0.2s ease all;
 }
-
+button:hover{
+  box-shadow: 0px 10px 13px -7px #000000  ;
+}
 input{
   margin-top: 10px;
   padding: 5px;
